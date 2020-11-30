@@ -22,7 +22,7 @@
 
 
 
-#include <Q2HX711.h>
+#include <Q2HX711.h> //HX711 weight cell sensor. Open source library
 const byte hx711_data_pin = A4;
 const byte hx711_clock_pin = A2;
 const int triggerDepth = 6;
