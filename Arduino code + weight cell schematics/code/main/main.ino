@@ -123,7 +123,7 @@ void loop() {
     
     float actualImpulse = runningSum + (lostWeight * runningCount);
     float finalAverageThrust = actualImpulse / runningCount;
-    Serial.println("The avg thrust is " + String(finalAverageThrust / 9.8) + " Newtons.");
+    Serial.println("The avg thrust is " + String(finalAverageThrust / 98) + " Newtons.");
     state = 3; //just to make the program stop
 
   }
