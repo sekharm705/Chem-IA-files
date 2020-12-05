@@ -1,4 +1,28 @@
+//HARDWARE:
 
+// The weight cell was obtained from a cheap generic jewelry scale that I bought of Amazon, with an LCD display and a resolution of 0.01g.
+// (https://www.amazon.in/Right-Choice-Digital-Jewellery-Weighing/dp/B01N2BDGCQ). However, the resolution was limited to 0.1g because
+// of high fluctuations in the second decimal place. I disassembled the scale and unsoldered the weight cell from the PCB, discarded 
+// the PCB/LCD, and attached the wires to a HX711 board, a cheap ADC converter (also from Amazon) with the following connections:
+
+// Weight cell wire --> HX711 Port
+// Green --> A+
+// White --> A-
+// Black --> E-
+// Red --> E+
+
+// The HX711 was connected to a generic Arduino Nano (with the ATmega328P chip, at 5V) as follows:
+// VCC --> 5V/3.3V/digital pin set to HIGH
+// GND --> GND pin/digital pin set to LOW
+// SCK (Serial clock) --> A4
+// DT (Data) --> A4
+
+// Power from the Arduino was just supplied through a computer.
+
+//SOFTWARE
+
+// THe HX711 library was used for convenience (https://github.com/bogde/HX711)
+ 
 //State values:
 //0: Idle, before fire
 //1: Firing
@@ -27,7 +51,9 @@ const byte hx711_data_pin = A4;
 const byte hx711_clock_pin = A2;
 const int triggerDepth = 6;
 const int endingDepth = 3;
-const double scale = 52.675;
+const double scale = 52.68; //This is an experimental measure of how much the ADC value from the HX711 changes per gram. Weight cells are (to a great degree) linear, so
+// the actual mass of an object is the recorded input divided by this value. I calculated this value by measuring the reported mass of 100mL of regular water (in a measuring 
+// cylinder), subtracting the value of just the empty cylinder from it, and dividing by 100. This value may vary between weighing scales.
 
 Q2HX711 hx711(hx711_data_pin, hx711_clock_pin);
 double err;
