@@ -1,0 +1,2 @@
+All the molds were printed in orange PLA, on an Anet A8, sliced with Cura. Most settings shouldn't matter, but I specified 8 wall layers to keep the walls intact. Both pieces were printed at 100% fill.
+Regarding the material, it would have been more effective to print in metal, but since I did not have access to a metal 3D printer, I reduced the size of the PLA model to reduce the burn time and tested a few designs to see which could hold up under the heat. These molds did experience a lot of deformation on the inside, but they remained sturdy enough for the firing.
