@@ -5,7 +5,7 @@
 // of high fluctuations in the second decimal place. I disassembled the scale and unsoldered the weight cell from the PCB, discarded 
 // the PCB/LCD, and attached the wires to a HX711 board, a cheap ADC converter (also from Amazon) with the following connections:
 
-// Weight cell wire --> HX711 Port
+// Weight cell wire --> HX711 Port connections:
 // Green --> A+
 // White --> A-
 // Black --> E-
@@ -14,7 +14,7 @@
 // The HX711 was connected to a generic Arduino Nano (with the ATmega328P chip, at 5V) as follows:
 // VCC --> 5V/3.3V/digital pin set to HIGH
 // GND --> GND pin/digital pin set to LOW
-// SCK (Serial clock) --> A4
+// SCK (Serial clock) --> A2
 // DT (Data) --> A4
 
 // Power for the Arduino was supplied through a computer.
